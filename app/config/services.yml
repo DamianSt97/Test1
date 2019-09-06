@@ -24,6 +24,12 @@ services:
 
     # controllers are imported separately to make sure they're public
     # and have a tag that allows actions to type-hint services
+
+    app.form_login_authenticator:
+        class: AppBundle\Security\FormLoginAuthenticator
+        arguments: ["@router", "@security.password_encoder"]
+
+
     AppBundle\Controller\:
         resource: '../../src/AppBundle/Controller'
         public: true

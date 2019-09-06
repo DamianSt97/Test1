@@ -7,17 +7,19 @@
 {% block body %}
 
 
-<div class="row">
-    <div class="col-md-12">
-        <div class="page-header">
-            <h2><a href="{{ path('product') }}">Product</a></h2>
-        </div>
-    </div>       
+    <div class="row">
+        <div class="col-md-12">
+            <div class="page-header-left">
+                <h2><a href="{{ path('product') }}">Product</a></h2></div>
+            <div class="page-header-right">
+                <h2><a href="{{ path('category') }}">Category</a></h2>
+            </div></div>
 
-<!-- FILTERING -->
+
+        <!-- FILTERING -->
 <div class="col-md-12">
     <div  id="filters" class="collapse">
-
+        https://www.facebook.com/#
         <form class="well" action="{{ path('product') }}" method="get" >
             <div class="row">
                  
@@ -31,6 +33,7 @@
 
                  
                     <div class="col-md-6">{{ form_row(filterForm.description) }}</div>
+
 
                                 <div class="col-md-6">
                     {{ form_rest(filterForm) }}
@@ -120,10 +123,10 @@
                         <th width="20px"><input type="checkbox" class="check-all" onclick="toggleAll(this)"></th>
 
 
-                            <th>ghj</th>
-                            <th>hgj</th>
-                            <th>hjjhg</th>
-                            <th>jhkh</th>
+                            <th>ID</th>
+                            <th>NAME</th>
+                            <th>PRICE</th>
+                            <th>DESCRIPTION</th>
     
                        
                         <th width = "130px">List</th>
@@ -137,6 +140,8 @@
                         <td>{{ product.name }}</td>
                         <td>{{ product.price }}</td>
                         <td>{{ product.description }}</td>
+                        <td><a href="{{ path('category_show', { 'id': product.category.id }) }}">{{ product.category }}</a></td>
+
     
                         <td class="actions">
                             <a  onclick="return confirm('Are you sure!');" title="Delete" class="btn btn-danger btn-sm" href="{{ path('product_by_id_delete', { 'id': product.id}) }}">

@@ -14,10 +14,24 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Category
 {
-    // ...
+    /**
+     * @var int
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="name", type="string", length=255)
+     */
+    private $name;
 
     /**
      * @ORM\OneToMany(targetEntity="Product", mappedBy="category")
+     *
      */
     private $products;
 
@@ -52,6 +66,27 @@ class Category
      * @return string
      */
     public function getName()
+    {
+        return $this->name;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getProducts()
+    {
+        return $this->products;
+    }
+
+    /**
+     * @param mixed $products
+     */
+    public function setProducts($products)
+    {
+        $this->products = $products;
+    }
+
+    public function __toString()
     {
         return $this->name;
     }

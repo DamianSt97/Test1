@@ -45,6 +45,8 @@
       <path value="$PROJECT_DIR$/vendor/petkopara/crud-generator-bundle" />
       <path value="$PROJECT_DIR$/vendor/petkopara/multi-search-bundle" />
       <path value="$PROJECT_DIR$/vendor/pagerfanta/pagerfanta" />
+      <path value="$PROJECT_DIR$/vendor/knplabs/knp-menu-bundle" />
+      <path value="$PROJECT_DIR$/vendor/knplabs/knp-menu" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="5.5.0" />
