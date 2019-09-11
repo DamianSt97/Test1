@@ -129,7 +129,7 @@
                             <th>DESCRIPTION</th>
     
                        
-                        <th width = "130px">List</th>
+                        <th width = "130px">CATEGORY</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -140,7 +140,7 @@
                         <td>{{ product.name }}</td>
                         <td>{{ product.price }}</td>
                         <td>{{ product.description }}</td>
-                        <td><a href="{{ path('category_show', { 'id': product.category.id }) }}">{{ product.category }}</a></td>
+                        <td><a href="{{ path('category_show', { 'id': product.category.id|default('1') }) }}">{{ product.category }}</a></td>
 
     
                         <td class="actions">
